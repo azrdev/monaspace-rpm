@@ -27,8 +27,6 @@ URL:     %{forgeurl}
 
 %global foundry           monaspace
 %global fontlicenses      LICENSE
-%global fontdocs          docs/*.md *.md *.txt
-%global fontdocsex        %{fontlicenses}
 
 %global common_description %{expand:
 The Monaspace type system is a monospaced type superfamily with some modern tricks up its sleeve. It consists of five variable axis typefaces. Each one has a distinct voice, but they are all metrics-compatible with one another, allowing you to mix and match them for a more expressive typographical palette.
@@ -136,11 +134,6 @@ Summary:  Monaspace fonts by GitHub Next
 %fontcheck -a
 
 %fontfiles -a
-
-%files doc
-%defattr(644, root, root, 0755)
-%license 
-%doc 
 
 %changelog
 %autochangelog
