@@ -13,6 +13,9 @@
 # “fonts-2-multi”:  multi-family fonts packaging
 # “fonts-3-sub”:    packaging fonts, released as part of something else
 #
+
+Name: monaspace
+Summary:  A monospaced type superfamily with some modern tricks up its sleeve
 BuildArch: noarch
 
 # https://docs.fedoraproject.org/en-US/packaging-guidelines/SourceURL/#_release_example
@@ -27,14 +30,11 @@ URL:     %{forgeurl}
 
 %global foundry           monaspace
 %global fontlicenses      LICENSE
-
 %global common_description %{expand:
 The Monaspace type system is a monospaced type superfamily with some modern tricks up its sleeve. It consists of five variable axis typefaces. Each one has a distinct voice, but they are all metrics-compatible with one another, allowing you to mix and match them for a more expressive typographical palette.
 
 ✨ An exploration from GitHub Next. ✨ See the full story of Monaspace at monaspace.githubnext.com.
 }
-
-
 
 # do not use the zero/nosuffix declaration block, as this block
 # will attempt to generate source rpm declarations by default.
@@ -44,11 +44,9 @@ The Monaspace type system is a monospaced type superfamily with some modern tric
 
 %global fontfamily1       Monaspace Neon
 %global fontsummary1      GitHub Monaspace Neon: Neo-grotesque sans
-%global fontpkgheader1    %{expand:
-}
 %global fonts1            fonts/variable/MonaspaceNeon*.ttf
 #% global fontsex1          
-%global fontconfs1        %{SOURCE11}
+%global fontconfs1      %{SOURCE11}
 #% global fontconfsex1      
 #% global fontappstreams1   
 #% global fontappstreamsex1 
@@ -59,8 +57,6 @@ GitHub Monaspace Neon: Neo-grotesque sans
 
 %global fontfamily2       Monaspace Argon
 %global fontsummary2      GitHub Monaspace Argon: Humanist sans
-%global fontpkgheader2    %{expand:
-}
 %global fonts2            fonts/variable/MonaspaceArgon*.ttf
 %global fontconfs2        %{SOURCE12}
 %global fontdescription2  %{expand:
@@ -111,8 +107,6 @@ Source13: 69-%{fontpkgname3}.conf
 Source14: 69-%{fontpkgname4}.conf
 Source15: 69-%{fontpkgname5}.conf
 
-Name: monaspace
-Summary:  Monaspace fonts by GitHub Next
 %description
 %wordwrap -v common_description
 
@@ -121,7 +115,7 @@ Summary:  Monaspace fonts by GitHub Next
 %fontmetapkg
 
 %prep
-%setup
+%autosetup
 %linuxtext *.txt
 
 %build
