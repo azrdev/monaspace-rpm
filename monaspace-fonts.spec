@@ -14,7 +14,7 @@
 # “fonts-3-sub”:    packaging fonts, released as part of something else
 #
 
-Name: monaspace
+Name: monaspace-fonts
 Summary:  A monospaced type superfamily with some modern tricks up its sleeve
 BuildArch: noarch
 
@@ -115,7 +115,7 @@ Source15: 69-%{fontpkgname5}.conf
 %fontmetapkg
 
 %prep
-%autosetup
+%autosetup -n monaspace-%{version}
 %linuxtext *.txt
 
 %build
